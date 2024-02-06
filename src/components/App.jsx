@@ -6,7 +6,9 @@ import Note from "./Note"
 function App() {
     return <div>
         <Header />
-        <Note />
+        <Note 
+        title="Title"
+        content="This is the paragraph"/>
         <Footer />
     </div>
 }
