@@ -6,18 +6,19 @@ import notes from "../notes"
 
 
 
-function noter(item){
-    return <Note
-        key={item.key}
-        title={item.title}    //braces since jsx is within html
-        content={item.content}
-        />
-}
+
 function App() {
     return <div>
         <Header />
         
-        {notes.map(noter)}
+        {notes.map((item) => (
+            <Note
+                key={item.key}
+                title={item.title}    //braces since jsx is within html
+                content={item.content}
+                />
+        
+        ))}
         <Footer />
     </div>
 }
