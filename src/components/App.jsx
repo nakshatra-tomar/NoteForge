@@ -4,14 +4,20 @@ import Footer from "./Footer"
 import Note from "./Note"
 import notes from "../notes"
 
-console.log(notes);
 
+
+function noter(item){
+    return <Note
+        key={item.key}
+        title={item.title}    //braces since jsx is within html
+        content={item.content}
+        />
+}
 function App() {
     return <div>
         <Header />
-        <Note 
-        title="Title"
-        content="This is the paragraph"/>
+        
+        {notes.map(noter)}
         <Footer />
     </div>
 }
