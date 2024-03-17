@@ -5,10 +5,10 @@ import React from "react";
 function Note(props){
 
     function handleClick() {
-        props.onDelete()
+        props.onDelete(props.id)
     }
 
-    return <div className="note">
+    return (<div className="note">
     <h1>
         {props.title}
     </h1>
@@ -19,7 +19,7 @@ function Note(props){
 
     <button onClick={handleClick}>Delete</button>
 
-    </div>
+    </div>);
 }
 
 export default Note;

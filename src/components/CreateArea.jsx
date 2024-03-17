@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CreateArea() {
   const [note, setNote] = useState({
@@ -26,7 +26,7 @@ function CreateArea() {
     // and pass the 'note' object as an argument to add a new note.
     props.onAdd(note);
 
-    setNote({
+    setNote({                 //clears the note after submission
       title: "",
       content: ""
     })
