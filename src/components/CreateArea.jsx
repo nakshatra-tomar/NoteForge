@@ -21,12 +21,18 @@ function CreateArea() {
     });
   }
 
-  function submitNote(event){
-
+  function submitNote(event) {
+    // Call the 'onAdd' function passed as a prop to the component,
+    // and pass the 'note' object as an argument to add a new note.
     props.onAdd(note);
+
+    setNote({
+      title: "",
+      content: ""
+    })
+    // Prevent the default form submission behavior to avoid page reload.
     event.preventDefault();
   }
-
   return (
     <div>
       <form>

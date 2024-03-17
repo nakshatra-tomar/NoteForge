@@ -17,21 +17,33 @@ function App() {
             return [...prevNotes, newNote];
         })
     }
-    return <div>
+
+
+    function deleteNote(id){
+        setNotes(prevNotes => {
+            return prevNotes.filter((noteItem, index) => { //will end up with array that has everything except the matched id node
+
+                return index != id;
+
+            })
+        })
+    }
+    return (<div>
         <Header />
 
         <CreateArea onAdd={addNote} />
         
-        {notes.map((item) => (
-            <Note
-                key={item.key}
-                title={item.title}    //braces since jsx is within html
-                content={item.content}
+        {notes.map((noteItem) => {
+            return (<Note
+                title={noteItem.title}    
+                content={noteItem.content}
+                onDelete={deleteNote}
                 />
-        
-        ))}
+        );
+        })}
         <Footer />
     </div>
+    );
 }
 
 export default App;
