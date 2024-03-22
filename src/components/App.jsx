@@ -15,7 +15,7 @@ function App() {
     function addNote(newNote){
         setNotes(prevNotes => {
             return [...prevNotes, newNote];
-        })
+        });
     }
 
 
@@ -25,8 +25,8 @@ function App() {
 
                 return index != id;
 
-            })
-        })
+            });
+        });
     }
     return (<div>
         <Header />
